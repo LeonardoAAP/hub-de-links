@@ -3,56 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Hub de Links</title>
+    <title>Meu Hub de Links - Estilo DesignerFlix</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #141414; /* Fundo preto Netflix */
+            color: #ffffff;
         }
-        .card-link {
-            text-decoration: none;
-            color: inherit;
+
+        .main-logo-text {
+            color: #E50914; /* Vermelho Netflix */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        .card-link .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+        .category-title {
+            border-left: 4px solid #E50914;
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background-color: #222222; /* Cor de fundo dos cards */
+            border: 1px solid #333333;
             transition: all 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Efeito de zoom */
+            border-color: #E50914;
+        }
+
+        .card-title {
+            color: #ffffff;
+        }
+
+        .card-text {
+            color: #a9a9a9;
+        }
+        
+        .card a {
+            text-decoration: none;
+        }
+
+        .card-footer {
+            color: #E50914;
+            font-weight: bold;
         }
     </style>
 </head>
-<body>
+<body class="bg-dark text-white">
 
     <div class="container my-5">
         <header class="text-center mb-5">
-            <h1 class="display-4">Hub de Links</h1>
-            <p class="lead">Sua central de recursos diários</p>
+            <h1 class="main-logo-text display-4">Hub de Links</h1>
+            <p class="lead text-muted">Sua central de recursos diários</p>
         </header>
 
-        {% for categoria in categorias %}
         <section class="mb-5">
-            <h2 class="mb-3"><i class="bi bi-folder2-open"></i> {{ categoria.nome }}</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <h2 class="category-title">Ferramentas de IA para Design Educacional</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                 
-                {% for link in categoria.links %}
                 <div class="col">
-                    <a href="{{ link.url }}" target="_blank" class="card-link">
+                    <a href="https://www.perplexity.ai/" target="_blank" class="text-decoration-none">
                         <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ link.titulo }}</h5>
-                                <p class="card-text">{{ link.descricao }}</p>
-                            </div>
-                            <div class="card-footer bg-transparent border-0 text-end">
-                                <small class="text-muted">Acessar <i class="bi bi-arrow-right-short"></i></small>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Perplexity AI</h5>
+                                <p class="card-text flex-grow-1">Ótimo para pesquisas aprofundadas e encontrar fontes acadêmicas.</p>
+                                <div class="text-end mt-auto">
+                                    <small class="card-footer">Acessar <i class="bi bi-arrow-up-right-square"></i></small>
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                {% endfor %}
+
+                <div class="col">
+                    <a href="https://gamma.app/" target="_blank" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Gamma.app</h5>
+                                <p class="card-text flex-grow-1">Criação de apresentações e documentos com base em prompts de IA.</p>
+                                <div class="text-end mt-auto">
+                                    <small class="card-footer">Acessar <i class="bi bi-arrow-up-right-square"></i></small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="https://www.midjourney.com/" target="_blank" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Midjourney</h5>
+                                <p class="card-text flex-grow-1">Geração de imagens de alta qualidade para materiais didáticos.</p>
+                                <div class="text-end mt-auto">
+                                    <small class="card-footer">Acessar <i class="bi bi-arrow-up-right-square"></i></small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
             </div>
         </section>
-        {% endfor %}
+
+        <section class="mb-5">
+            <h2 class="category-title">Recursos de Design</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                
+                <div class="col">
+                    <a href="https://www.figma.com/" target="_blank" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Figma</h5>
+                                <p class="card-text flex-grow-1">Ferramenta colaborativa para design de interfaces e prototipagem.</p>
+                                <div class="text-end mt-auto">
+                                    <small class="card-footer">Acessar <i class="bi bi-arrow-up-right-square"></i></small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col">
+                    <a href="https://coolors.co/" target="_blank" class="text-decoration-none">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Coolors</h5>
+                                <p class="card-text flex-grow-1">Gerador de paletas de cores para harmonizar seus projetos.</p>
+                                <div class="text-end mt-auto">
+                                    <small class="card-footer">Acessar <i class="bi bi-arrow-up-right-square"></i></small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        
         </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
